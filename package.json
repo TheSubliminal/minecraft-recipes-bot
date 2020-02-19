@@ -1,0 +1,33 @@
+{
+  "name": "minecraft-recipes-bot",
+  "version": "1.0.0",
+  "description": "Bot that shows you the crafting recipes for Minecraft items",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheSubliminal/minecraft-recipes-bot.git"
+  },
+  "keywords": [
+    "minecraft",
+    "recipes",
+    "telegram",
+    "bot"
+  ],
+  "author": "Michael Fridrikhson",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/TheSubliminal/minecraft-recipes-bot/issues"
+  },
+  "homepage": "https://github.com/TheSubliminal/minecraft-recipes-bot#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "telegraf": "^3.36.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.2"
+  }
+}
