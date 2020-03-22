@@ -4,7 +4,8 @@
   "description": "Bot that shows you the crafting recipes for Minecraft items",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon bot.js"
+    "start": "nodemon bot.js",
+    "lint": "eslint --fix ./**/*.js"
   },
   "repository": {
     "type": "git",

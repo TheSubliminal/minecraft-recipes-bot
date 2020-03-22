@@ -1,6 +1,6 @@
 const Telegraf = require('telegraf');
 
-const { token } = require('./config/botConfig');
+const { token } = require('./config/bot.config');
 const applyHandlers = require('./handlers');
 
 const bot = new Telegraf(token);

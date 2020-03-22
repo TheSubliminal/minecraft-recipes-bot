@@ -19,6 +19,7 @@
     "no-console": ["error", { "allow": ["warn", "error"] }],
 		"indent": ["error", 2, { "SwitchCase": 1 }],
 		"quotes": ["error", "single"],
-    "require-atomic-updates": "off"
+		"require-atomic-updates": "off",
+		"arrow-parens": ["error", "as-needed"]
 	}
 }

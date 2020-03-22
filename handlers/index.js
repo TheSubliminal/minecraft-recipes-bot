@@ -1,8 +1,11 @@
+const recipeHandler = require('./recipe.handler');
+const { welcomeMessage } = require('../config/bot.config');
+
+const recipeWordRegex = /^[a-zA-Z\s]+$/;
+
 const applyHandlers = bot => {
-  bot.start((ctx) => ctx.reply('Welcome!'));
-  bot.help((ctx) => ctx.reply('Send me a sticker'));
-  bot.on('sticker', (ctx) => ctx.reply('👍'));
-  bot.hears('hi', (ctx) => ctx.reply('Hey there'));
+  bot.start(ctx => ctx.replyWithMarkdown(welcomeMessage));
+  bot.hears(recipeWordRegex, recipeHandler);
 };
 
 module.exports = applyHandlers;
