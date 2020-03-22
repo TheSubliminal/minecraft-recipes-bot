@@ -1,15 +1,12 @@
-const { getItemPage } = require('../repositories/item.repository');
-
-const getRecipeImage = itemPage => {
-  const document = itemPage.window.document;
-  const recipeElement = document.querySelector('.mcui.mcui-Crafting_Table.pixel-image');
-  console.log(recipeElement);
-};
+const { getItemImage } = require('../repositories/item.repository');
 
 const recipeHandler = async ctx => {
-  const itemPage = await getItemPage(ctx.message.text);
-  const recipeImage = getRecipeImage(itemPage);
-  // ctx.reply(recipeImage);
+  try {
+    const recipeImage = await getItemImage(ctx.message.text);
+    ctx.replyWithPhoto({ source: recipeImage });
+  } catch (error) {
+    ctx.reply('I can\'t find that item :(');
+  }
 };
 
 module.exports = recipeHandler;

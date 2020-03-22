@@ -4,7 +4,8 @@
   "description": "Bot that shows you the crafting recipes for Minecraft items",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon bot.js"
+    "start": "nodemon bot.js",
+    "lint": "eslint --fix ./**/*.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,6 @@
   "homepage": "https://github.com/TheSubliminal/minecraft-recipes-bot#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "jsdom": "^16.2.0",
     "telegraf": "^3.36.0"
   },
   "devDependencies": {

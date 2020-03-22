@@ -1,3 +1,3 @@
 module.exports = {
-  host: 'https://minecraft.gamepedia.com'
+  base: 'https://www.minecraftcrafting.info/imgs/craft_'
 };
