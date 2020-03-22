@@ -25,10 +25,12 @@ const getDataFromUrl = url => {
 const getItemImage = async itemName => {
   try {
     const itemUrl = getItemUrl(itemName);
-    return await getDataFromUrl(itemUrl);
+    const image = await getDataFromUrl(itemUrl);
+    return { image, animated: false };
   } catch (error) {
     const itemUrl = getItemUrl(itemName, 'gif');
-    return getDataFromUrl(itemUrl);
+    const image = await getDataFromUrl(itemUrl);
+    return { image, animated: true };
   }
 };
 
