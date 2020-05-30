@@ -4,7 +4,7 @@ const { getItemImage } = require('../repositories/item.repository');
 const { getFileLink } = require('../helpers/telegramFileLink.helper');
 
 const recipeHandler = async ctx => {
-  dashbot.logIncoming({
+  await dashbot.logIncoming({
     text: ctx.message.text,
     userId: ctx.chat.id.toString()
   });
@@ -22,7 +22,7 @@ const recipeHandler = async ctx => {
     const fileId = animated ? answerMessage.animation.file_id : answerMessage.photo[0].file_id;
     const fileUrl = await getFileLink(fileId);
 
-    dashbot.logOutgoing({
+    await dashbot.logOutgoing({
       text: '',
       userId: answerMessage.chat.id.toString(),
       images: [{
@@ -31,9 +31,8 @@ const recipeHandler = async ctx => {
     });
   } catch (error) {
     const answerMessage = await ctx.reply('I can\'t find that item :(');
-    console.log(error);
 
-    dashbot.logOutgoing({
+    await dashbot.logOutgoing({
       text: answerMessage.text,
       userId: answerMessage.chat.id.toString()
     });
