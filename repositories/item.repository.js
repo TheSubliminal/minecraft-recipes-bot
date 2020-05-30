@@ -16,7 +16,7 @@ const getDataFromUrl = url => {
       }).on('end', () => {
         resolve(Buffer.concat(data));
       }).on('error', e => {
-        reject(new Error(e));
+        reject(e);
       });
     });
   });
